@@ -13,6 +13,12 @@
  		select * from Users where email=#{email} and 
  		password=#{password}
  	</select>
+ 	
+ 	<!--  회원가입  -->
+ 	<insert id="insertJoin">
+		insert into Users values(#{email},seq_user_no.nextval,#{password},
+		#{name},#{phone_no},#{birth},1,#{address1},#{address2},#{zipcode})
+	</insert>
  
  
  

@@ -14,19 +14,19 @@
 	<nav>
 		<h1></h1>
 		<ul>
-			<li>COOKIT소개</li>
-			<li>COOKIT메뉴</li>
-			<li>리뷰</li>
-			<li>이벤트</li>
-			<li>MY쿡킷</li>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
 		</ul>
 		<ul>
 		<c:choose>
-		<c:when test="${adminCode==1 }">
-			<li><a href="#"><span>장바구니</span></a></li>
+		<c:when test="${session_adminCode==2 }">
+			<li><a href="#"><span>관리자페이지</span></a></li>
 		</c:when>
 		<c:otherwise>
-			<li><a href="#"><span>관리자페이지</span></a></li>
+			<li><a href="#"><span>장바구니</span></a></li>
 		</c:otherwise>
 		</c:choose>
 		</ul>

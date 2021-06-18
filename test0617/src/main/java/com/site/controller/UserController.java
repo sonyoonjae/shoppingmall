@@ -64,16 +64,13 @@ public class UserController {
 			HttpSession session = request.getSession();
 			session.setAttribute("session_flag","success");
 			session.setAttribute("session_email", uVo.getEmail());
+			session.setAttribute("session_adminCode", uVo.getAdminCode());
 			session.setAttribute("name", uVo.getName());
 		}
 		return map;
-	}	
+	}
 	
 	
 	
-	
-	
-
-
 
 }
