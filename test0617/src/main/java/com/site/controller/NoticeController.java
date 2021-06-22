@@ -68,5 +68,19 @@ public class NoticeController {
 		noticeService.noticeDelete(notice_no);
 		return "redirect:/notice";
 	}
+	
+	@RequestMapping("/modify") //수정페이지 호출
+	public String modify(@RequestParam("notice_no") int notice_no,Model model) {
+		NoticeVo noticeVo = noticeService.noticeModify(notice_no);
+		model.addAttribute(noticeVo);
+		return "/notice/noticeModify";
+	}
+	
+	@RequestMapping("/modifyDo") //수정페이지 호출
+	public String modifyDo(NoticeVo noticeVo, MultipartFile file) {
+		noticeService.noticeModifyDo(noticeVo,file);
+		return "redirect:/view?notice_no=" + noticeVo.getNotice_no();
+	}
+	
 
 }

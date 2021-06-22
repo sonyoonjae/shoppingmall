@@ -17,6 +17,8 @@ public interface NoticeMapper {
 	NoticeVo selectNoticeView(int notice_no);
 	void insertNoticeWriteDo(NoticeVo noticeVo);
 	void deleteNoticeDelete(int notice_no);
+	NoticeVo selectNoticeModify(int notice_no);
+	void updateNoticeModifyDo(NoticeVo noticeVo);
 	
 	
 	

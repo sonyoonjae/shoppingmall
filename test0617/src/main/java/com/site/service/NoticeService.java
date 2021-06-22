@@ -23,6 +23,10 @@ public interface NoticeService {
 	void noticeWriteDo(NoticeVo noticeVo, MultipartFile file);
 
 	void noticeDelete(int notice_no);
+
+	NoticeVo noticeModify(int notice_no);
+
+	void noticeModifyDo(NoticeVo noticeVo, MultipartFile file);
 	
 
 }

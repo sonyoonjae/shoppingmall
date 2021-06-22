@@ -52,7 +52,7 @@
 
     <a href="./notice"><div class="list">목록</div></a>
     <a href="#" onclick="delete_check()"><div class="list">삭제</div></a>
-    <div class="list">수정</div>
+     <a href="./modify?notice_no=${map.noticeVo.notice_no }"><div class="list">수정</div>
   </section>
 
  	<c:import url="/WEB-INF/views/includes/footer.jsp"></c:import>

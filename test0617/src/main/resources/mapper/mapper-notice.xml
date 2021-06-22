@@ -48,6 +48,18 @@
 	<delete id="deleteNoticeDelete">
 		delete from notice where notice_no=#{notice_no}
 	</delete>
+	
+<!-- 수정페이지 호출 -->
+	<select id="selectNoticeModify" resultType="com.site.vo.NoticeVo">
+		select * from notice where notice_no=#{notice_no}
+	</select>
+	
+<!-- 수정페이지 저장 -->
+	<update id="updateNoticeModifyDo">
+		update notice set notice_title=#{notice_title},
+		notice_content=#{notice_content},notice_image=#{notice_image}
+		where notice_no=#{notice_no}
+	</update>
 
 	
 	
