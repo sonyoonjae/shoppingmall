@@ -5,13 +5,48 @@
   
 <mapper namespace="com.site.mapper.NoticeMapper">
 
-	<!-- 리스트호출 -->
-	<select id ="selectNoticeList" resultType="com.site.vo.NoticeVo">
-		<![CDATA[
-			select * from notice order by desc
-		]]>
-	</select>
 
+<!-- 전체리스트 호출 -->
+	<select id="selectNoticeList" 
+			resultType ="com.site.vo.NoticeVo">
+	<![CDATA[
+			select * from
+			(select rownum as rnum,a.* from
+			(select * from notice order by notice_no desc) a)
+			where rnum>=#{startrow} and rnum<=#{endrow}
+	]]>
+	</select>
+	
+<!-- 전체게시글 수 -->
+	<select id="selectNoticeCount" resultType="int">
+	<![CDATA[
+	   select count(*) from notice
+	]]>   
+	</select>
+	
+<!-- 조회수 증가 -->
+	<update id="updatehit">
+		update notice set notice_hit=notice_hit+1 where notice_no=#{notice_no}
+	</update>
+	
+<!-- 뷰페이지 호출 -->
+	<select id ="selectNoticeView" resultType="com.site.vo.NoticeVo">
+		select * from notice where notice_no=#{notice_no}
+	</select>
+	
+<!-- 글쓰기 저장 -->
+	<insert id ="insertNoticeWriteDo">
+	<![CDATA[
+		insert into notice values(
+		seq_notice_no.nextval,#{email},
+		#{notice_title}, #{notice_content},
+		sysdate,0,#{notice_image})
+	]]>   
+	</insert>
+	
+
+	
+	
 
 
 

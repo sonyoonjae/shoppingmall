@@ -14,7 +14,7 @@
 	<nav>
 		<h1></h1>
 		<ul>
-			<li>1</li>
+			<li><a href="./notice"><span>공지사항</span></a></li>
 			<li>2</li>
 			<li>3</li>
 			<li>4</li>
