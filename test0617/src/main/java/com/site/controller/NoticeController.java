@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
@@ -58,12 +59,14 @@ public class NoticeController {
 	
 	@RequestMapping("/writeDo") //쓰기저장 호출
 	public String writeDo(NoticeVo noticeVo,@RequestPart MultipartFile file) {
-		System.out.println("testC 이메일 : "+noticeVo.getEmail());
-		System.out.println("testC 제목 : "+noticeVo.getNotice_title());
 		noticeService.noticeWriteDo(noticeVo,file);
 		return "redirect:/notice";
 	}
 	
-
+	@RequestMapping("/delete") //글 삭제
+	public String delete(@RequestParam("notice_no") int notice_no) {
+		noticeService.noticeDelete(notice_no);
+		return "redirect:/notice";
+	}
 
 }

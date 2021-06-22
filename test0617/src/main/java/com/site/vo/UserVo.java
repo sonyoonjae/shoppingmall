@@ -12,12 +12,12 @@ public class UserVo {
 	
 	
 	private String email;
-	private int userNo;
+	private int user_no;
 	private String password;
 	private String name;
-	private String phoneNo;
+	private String phone_no;
 	private String birth;
-	private int adminCode;
+	private int admin_code;
 	private String address1;
 	private String address2;
 	private String zipcode;

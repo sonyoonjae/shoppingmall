@@ -50,7 +50,7 @@
         <input type="text" name="email" id="email" class="int" size="45" placeholder="회원가입하신 email을 입력하세요">
       </div>
       <div class="password_area">
-        <input type="text" name="password" id="password" class="int" size="45" placeholder="비밀번호를 입력하세요">
+        <input type="password" name="password" id="password" class="int" size="45" placeholder="비밀번호를 입력하세요">
       </div>
       <button type="button" onclick="login_ajax()">로그인</button>
     </form>

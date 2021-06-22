@@ -14,6 +14,15 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/read.css">
+    <script type="text/javascript">
+    function delete_check(){
+    	if(confirm("삭제하시겠습니까?")){
+    		location.href="./delete?notice_no=${map.noticeVo.notice_no}";
+    	}else{
+    		return false;
+    	}
+    }
+  </script>  
 </head>
 
 <body>
@@ -42,7 +51,7 @@
     </table>
 
     <a href="./notice"><div class="list">목록</div></a>
-    <div class="list">삭제</div>
+    <a href="#" onclick="delete_check()"><div class="list">삭제</div></a>
     <div class="list">수정</div>
   </section>
 

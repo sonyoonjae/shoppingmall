@@ -64,7 +64,7 @@ public class UserController {
 			HttpSession session = request.getSession();
 			session.setAttribute("session_flag","success");
 			session.setAttribute("session_email", uVo.getEmail());
-			session.setAttribute("session_adminCode", uVo.getAdminCode());
+			session.setAttribute("session_admin_code", uVo.getAdmin_code());
 			session.setAttribute("name", uVo.getName());
 		}
 		return map;

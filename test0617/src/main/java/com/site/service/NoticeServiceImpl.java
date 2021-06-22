@@ -62,7 +62,7 @@ public class NoticeServiceImpl implements NoticeService {
 		return map;
 	}
 	
-	@Override
+	@Override //글쓰기
 	public void noticeWriteDo(NoticeVo noticeVo, MultipartFile file) {
 
 		String fileUrl="C:/Users/Koreavc/git/shoppingmall/test0617/src/main/resources/static/noticeUpload/";	
@@ -76,13 +76,13 @@ public class NoticeServiceImpl implements NoticeService {
 			e.printStackTrace();
 		}
 		noticeVo.setNotice_image(uploadImage);
-		
-		
-		System.out.println("testIm 이메일 : "+noticeVo.getEmail());
-		System.out.println("testIm 제목 : "+noticeVo.getNotice_title());
-		System.out.println("testIm 내용 : "+noticeVo.getNotice_content());
-		System.out.println("testIm 파일 : "+noticeVo.getNotice_image());
 		noticeMapper.insertNoticeWriteDo(noticeVo);
+	}
+
+	@Override //게시글 삭제
+	public void noticeDelete(int notice_no) {
+		noticeMapper.deleteNoticeDelete(notice_no);
+		
 	}
 	
 	

@@ -44,6 +44,10 @@
 	]]>   
 	</insert>
 	
+<!-- 게시글 삭제 -->
+	<delete id="deleteNoticeDelete">
+		delete from notice where notice_no=#{notice_no}
+	</delete>
 
 	
 	

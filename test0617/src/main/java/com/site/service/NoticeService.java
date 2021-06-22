@@ -21,6 +21,8 @@ public interface NoticeService {
 	Map<String, Object> noticeView(int notice_no);
 
 	void noticeWriteDo(NoticeVo noticeVo, MultipartFile file);
+
+	void noticeDelete(int notice_no);
 	
 
 }

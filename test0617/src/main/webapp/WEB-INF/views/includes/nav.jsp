@@ -22,7 +22,7 @@
 		</ul>
 		<ul>
 		<c:choose>
-		<c:when test="${session_adminCode==2 }">
+		<c:when test="${session_admin_code==2 }">
 			<li><a href="#"><span>관리자페이지</span></a></li>
 		</c:when>
 		<c:otherwise>
