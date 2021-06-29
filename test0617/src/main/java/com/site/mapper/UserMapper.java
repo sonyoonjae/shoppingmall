@@ -9,7 +9,9 @@ import com.site.vo.UserVo;
 public interface UserMapper {
 
 	UserVo selectLogin(UserVo userVo);
+
+	void insertUserDo(UserVo userVo);
 	
-	
+	public int emailCheck(String email);
 
 }

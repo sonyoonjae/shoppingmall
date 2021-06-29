@@ -8,8 +8,12 @@ import com.site.vo.UserVo;
 public interface UserService {
 
 	UserVo login(UserVo userVo);
+
+	void insertUser(UserVo userVo);
+
+	int emailCheck(String email) throws Exception;
 		
-		
+	
 	
 
 }

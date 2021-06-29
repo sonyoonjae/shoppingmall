@@ -17,4 +17,20 @@ public class UserServiceImpl implements UserService {
 		return userMapper.selectLogin(userVo);
 	}
 
+	@Override
+	public void insertUser(UserVo userVo) {
+		userMapper.insertUserDo(userVo);
+	
+	}
+
+	@Override
+	public int emailCheck(String email) throws Exception {
+		
+		return userMapper.emailCheck(email);
+	}
+
+
+
+
+
 }

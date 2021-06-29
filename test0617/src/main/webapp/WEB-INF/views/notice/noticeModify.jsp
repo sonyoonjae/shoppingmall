@@ -19,10 +19,11 @@
     <h1>게시글수정</h1>
     <hr>
 
-    <form action="modifyDo" name="modify" method="post">
-      <table>
+    <form action="modifyDo" name="modify" method="post" enctype="multipart/form-data">
+     
       <input type="hidden" name="notice_no" value="${noticeVo.notice_no }">
-      <input type="hidden" name="noticeImage">
+      <input type="hidden" name="notice_image" value="${ noticeVo.notice_image}">  
+       <table>
         <colgroup>
           <col width="15%">
           <col width="85%">
@@ -49,14 +50,14 @@
           <th>이미지 표시</th>
           <td>
             <input type="file" name="file" id="file" >
-            <a herf="/noticeUpload/${noticeVo.notice_image }"></a>
+            <a href="/noticeUpload/${noticeVo.notice_image }">${noticeVo.notice_image }</a>
           </td>
         </tr>
       </table>
       <hr>
       <div class="button-wrapper">
         <button type="submit" class="write">수정완료</button>
-        <button type="button" class="cancel" onclick="javascript:location.href='notice'">취소</button>
+        <button type="button" class="cancel" onclick="javascript:location.href='noticeList'">취소</button>
       </div>
     </form>
 

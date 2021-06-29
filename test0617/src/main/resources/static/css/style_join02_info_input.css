@@ -3,10 +3,7 @@
 * { margin: 0px; padding: 0px;}
 ul, ol{ list-style-type: none; }
 
-@charset "UTF-8";
 
-* { margin: 0px; padding: 0px;}
-ul, ol{ list-style-type: none; }
 
 /* header */
 #nav_up {
@@ -790,6 +787,29 @@ input[type="checkbox"]:not(old):checked + label {
 	margin-left: 80px;
 	border: 1px solid #fff;
 }
+
+	/* 중복이메일 존재하지 않는경우 */
+	.email_input_re_1{
+		color : green;
+		display : none;
+	}
+	/* 중복이메일 존재하는 경우 */
+	.email_input_re_2{
+		color : red;
+		display : none;
+	}
+	/* 사용불가능한 이메일 형식*/
+	.email_input_re_3{
+		color : red;
+		display : none;
+	}	
+	/* 사용가능한 이메일 형식*/
+	.email_input_re_4{
+		color : green;
+		display : none;
+	}
+
+
 
 
 

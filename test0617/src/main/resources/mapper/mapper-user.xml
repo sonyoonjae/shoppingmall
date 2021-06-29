@@ -15,10 +15,40 @@
  	</select>
  	
  	<!--  회원가입  -->
- 	<insert id="insertJoin">
-		insert into Users values(#{email},seq_user_no.nextval,#{password},
-		#{name},#{phone_no},#{birth},1,#{address1},#{address2},#{zipcode})
+ 	<insert id="insertUserDo">
+		INSERT INTO USERS(
+			EMAIL,
+			USER_NO,
+			PASSWORD,
+			NAME,
+			PHONE_NO,
+			BIRTH,
+			ADMIN_CODE,
+			ADDRESS1,
+			ADDRESS2,
+			ZIPCODE		
+		)VALUES(
+			#{email},
+			seq_users_no.nextval,
+			#{password},
+			#{name},
+			#{phone_no},
+			#{birth},
+			1,
+			#{address1},
+			#{address2},
+			#{zipcode}
+			)
 	</insert>
+	
+	<!--  아이디 중복체크  -->
+	<select id = "emailCheck" resultType="int">
+		SELECT COUNT(*) FROM USERS
+		WHERE EMAIL = #{email}
+	</select>
+	
+ 
+
  
  
  

@@ -93,7 +93,6 @@ public class NoticeServiceImpl implements NoticeService {
 
 	@Override //수정페이지 저장
 	public void noticeModifyDo(NoticeVo noticeVo, MultipartFile file) {
-		
 		String fileUrl="C:/Users/Koreavc/git/shoppingmall/test0617/src/main/resources/static/noticeUpload/";	
 		long time = System.currentTimeMillis();
 		String uploadImage = time+"_"+file.getOriginalFilename();
@@ -105,8 +104,6 @@ public class NoticeServiceImpl implements NoticeService {
 			e.printStackTrace();
 		}
 		noticeVo.setNotice_image(uploadImage);
-		System.out.println("테스트파일" + noticeVo.getNotice_image());
-		System.out.println("테스트제목" + noticeVo.getNotice_title());
 		noticeMapper.updateNoticeModifyDo(noticeVo);
 		
 	}

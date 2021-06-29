@@ -44,16 +44,23 @@
       </tr>     
       <tr>
         <td class="article">
-          <img alt="" src="http://localhost:8000/noticeUpload/${map.noticeVo.notice_image }" alt="" width="80%"></td>
+          <img src="http://localhost:8000/noticeUpload/${map.noticeVo.notice_image }" alt="" width="80%"></td>
       </tr>
 
 
     </table>
-
-    <a href="./notice"><div class="list">목록</div></a>
-    <a href="#" onclick="delete_check()"><div class="list">삭제</div></a>
-     <a href="./modify?notice_no=${map.noticeVo.notice_no }"><div class="list">수정</div>
-  </section>
+    <c:choose>
+    <c:when test="${session_admin_code==2 }">
+    	<a href="./noticeList"><div class="list">목록</div></a>
+    	<a href="#" onclick="delete_check()"><div class="list">삭제</div></a>
+    	<a href="./modify?notice_no=${map.noticeVo.notice_no }"><div class="list">수정</div>   
+    </c:when>
+    <c:otherwise>
+    	 <a href="./noticeList"><div class="list">목록</div></a>
+    </c:otherwise>
+    </c:choose>
+    
+</section>
 
  	<c:import url="/WEB-INF/views/includes/footer.jsp"></c:import>
 </body>

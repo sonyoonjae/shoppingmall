@@ -99,7 +99,11 @@
     </ul>
     <!-- 하단 넘버링 끝 -->
 
+    <c:if test="${session_admin_code==2 }">
     <a href="write"><div class="write">쓰기</div>
+    </c:if> 
+    
+    
   </section>
 
   	
